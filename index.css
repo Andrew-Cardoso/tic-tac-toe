@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: #381515;
+}
+
+body h1 {
+  color: #f09592;
+}
+
+main {
+  width: min(80vw, 80vh);
+  height: min(80vw, 80vh);
+  background: #492222;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  gap: 0px 0px;
+      grid-template-areas: "..." "..." "...";
+}
+
+section {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+section:nth-child(-n+6) {
+  border-bottom: thin solid black;
+}
+
+section:nth-child(3n+1), section:nth-child(3n-1) {
+  border-right: thin solid black;
+}
+
+section button {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+section button .tic-o {
+  color: #130a0a !important;
+}
+
+section button .tic-x {
+  color: #2c1616 !important;
+}
+
+section button svg {
+  width: 50%;
+  height: 50%;
+}
+
+section button svg:not(.fulfilled) {
+  opacity: 0;
+}
+
+section button svg.tic-x {
+  width: 60%;
+  height: 60%;
+}
+
+section button:hover svg:not(.fulfilled) {
+  opacity: .5;
+}
+
+#endgame {
+  z-index: 9;
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background: radial-gradient(circle closest-corner at center 50%, #2227, #0007 60%) no-repeat;
+  -webkit-animation: increaseOpacity 400ms forwards 50ms normal;
+          animation: increaseOpacity 400ms forwards 50ms normal;
+}
+
+#endgame h1,
+#endgame button {
+  color: #f09592;
+}
+
+#endgame button {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 60px;
+  font-size: 24px;
+  background: #0000;
+  outline: none;
+  border: none;
+  font-family: monospace;
+  font-weight: 600;
+  border-radius: 8px;
+  -webkit-filter: drop-shadow(2px 4px 6px black);
+          filter: drop-shadow(2px 4px 6px black);
+  background: #FFFFFF05;
+  cursor: pointer;
+  background-image: linear-gradient(-225deg, #49222210 0%, #fff1 13%, #49222205 57%, #ffffff05 89%, #49222210 100%);
+  background-size: 200% auto;
+  -webkit-animation: animateBackground 2s linear infinite;
+          animation: animateBackground 2s linear infinite;
+}
+
+@-webkit-keyframes increaseOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .9;
+  }
+}
+
+@keyframes increaseOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .9;
+  }
+}
+
+@-webkit-keyframes animateBackground {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes animateBackground {
+  to {
+    background-position: 200% center;
+  }
+}
+/*# sourceMappingURL=index.css.map */
